@@ -114,6 +114,20 @@ pnpm tauri build
 
 The installer will be located in `src-tauri/target/release/bundle/`
 
+For a locally signed macOS build, keep the signing identity in your shell
+environment instead of committing it to `src-tauri/tauri.conf.json`:
+
+```bash
+export APPLE_SIGNING_IDENTITY="Developer ID Application: Your Name (TEAMID)"
+# Optional: override the bundle identifier without changing tracked files.
+export TAURI_BUNDLE_IDENTIFIER="com.example.bettershot"
+
+pnpm tauri:build:signed
+```
+
+You can also place those variables in an ignored `.env.local` file for local
+use.
+
 #### Requirements
 
 - **Node.js**: 18+
@@ -197,6 +211,7 @@ Other useful commands:
 pnpm lint:ci
 pnpm test:rust
 pnpm tauri build
+pnpm tauri:build:signed
 ```
 
 ### Landing site (Next.js)
