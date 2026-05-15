@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
+    "tauri:build:signed": "node scripts/tauri-build-signed.mjs",
     "lint:ci": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
